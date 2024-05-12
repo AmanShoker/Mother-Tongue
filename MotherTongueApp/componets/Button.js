@@ -1,8 +1,10 @@
 import { StyleSheet, View, TouchableOpacity, Text } from "react-native";
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
 export default function Button({ label, onPress, icon }) {
   return (
-      <TouchableOpacity style={styles.button} onPress={() => alert('You pressed a button.')}>
+      <TouchableOpacity style={styles.button} onPress={onPress}>
+        <MaterialIcons name={icon} size={24} color="#fff" />
         <Text style={styles.buttonLabel}>{label}</Text>
       </TouchableOpacity>
   );
@@ -10,15 +12,11 @@ export default function Button({ label, onPress, icon }) {
   
 const styles = StyleSheet.create({
   button: {
-    flex: 5,
-    height: "100%",
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   buttonLabel: {
-    color: "#fff",
-    fontSize: 14,
-    marginTop: 5,
-    textAlign: "center",
+    color: '#fff',
+    marginTop: 12,
   },
 });

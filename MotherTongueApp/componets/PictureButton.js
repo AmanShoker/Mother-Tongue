@@ -5,7 +5,7 @@ export default function PictureButton({ onPress }) {
         <View style={styles.pictureBorder}>
             <TouchableOpacity 
                 style={styles.pictureButton} 
-                onPress={() => alert('You pressed a button.')} 
+                onPress={onPress} 
             />
         </View>
     );
