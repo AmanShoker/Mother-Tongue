@@ -39,9 +39,11 @@ export default function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <CameraView style={styles.camera} facing={facing}>
-        <View style={styles.pictureButtonContainer}>
-          <PictureButton onPress={toggleCameraFacing}/>
-        </View>
+          <View style={styles.buttonContainer}>
+            <Button onPress={toggleCameraFacing} icon="camera-flip-outline"/>
+            <PictureButton onPress={takePicture} title="Snap" />
+            <Button onPress={toggleCameraFacing} icon="flashlight"/>
+          </View>
         </CameraView>
       <StatusBar style="auto" />
     </View>
@@ -65,8 +67,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     left: 0,
     right: 0,
+    flexDirection: 'row',
 },
-  buttonContainer: { //will use for next buttons
+  buttonContainer: {
+    position: 'absolute',
+    bottom: 45,
+    left: 20,
+    right: 20,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+  },
+  buttonContainerOverlay: { //will use for next buttons
     position: "absolute",
     bottom: 0,
     left: 0,

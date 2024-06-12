@@ -1,5 +1,6 @@
 import { StyleSheet, View, TouchableOpacity, Text } from "react-native";
-import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import MaterialIcons from '@expo/vector-icons/MaterialCommunityIcons';
+
 
 export default function Button({ label, onPress, icon }) {
   return (
