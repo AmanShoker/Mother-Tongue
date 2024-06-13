@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, Text } from 'react-native';
 import React, { useState, useRef, useEffect } from 'react';
-import  { CameraView, useCameraPermissions } from 'expo-camera';
+import  { Camera, CameraView, useCameraPermissions } from 'expo-camera';
 
 import Button from '../components/Button';
 import PictureButton from '../components/PictureButton';
@@ -10,6 +10,7 @@ import PictureButton from '../components/PictureButton';
 export default function HomeScreen({ navigation }) {
   const [hasPermission, setHasPermission] = useCameraPermissions();
   const [facing, setFacing] = useState('back');
+  //const [flash, setFlash] = useState(Camera.FlashMode.off);
   const cameraRef = useRef(null);
 
   
